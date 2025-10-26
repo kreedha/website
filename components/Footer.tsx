@@ -46,11 +46,17 @@ export default function Footer() {
             <ul className="space-y-2">
               <li className="flex items-center space-x-2 text-gray-400">
                 <Phone className="w-4 h-4" />
-                <span>+91 98765 43210</span>
+                <div className="flex flex-col">
+                  <span>+91 9681540009</span>
+                  <span>+91 9988557609</span>
+                </div>
               </li>
               <li className="flex items-center space-x-2 text-gray-400">
                 <Mail className="w-4 h-4" />
-                <span>info@kreedha.com</span>
+                <div className="flex flex-col">
+                  <span>info@kreedha.com</span>
+                  <span className="text-xs">ranjeetchaudhary765@yahoo.com</span>
+                </div>
               </li>
               <li className="flex items-center space-x-2 text-gray-400">
                 <MapPin className="w-4 h-4" />
@@ -62,6 +68,10 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
           <p>&copy; {new Date().getFullYear()} Kreedha - From Farm to Soul. All rights reserved.</p>
+          <p className="text-xs mt-2">Proprietor: Ramayan Chaudhary</p>
+          <div className="text-xs mt-2 space-y-1">
+            <p>GST: 10AHFPC9774P1ZZ | UDYAM: UDYAM-BR-38-0053959 | PAN: AHFPC9774P</p>
+          </div>
         </div>
       </div>
     </footer>

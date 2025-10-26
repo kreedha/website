@@ -1,4 +1,5 @@
 import nodemailer from 'nodemailer';
+import { COMPANY_INFO } from './constants';
 
 // Email notification
 export async function sendOrderEmail(orderDetails: any) {
@@ -15,6 +16,10 @@ export async function sendOrderEmail(orderDetails: any) {
 
     const emailHtml = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+        <div style="text-align: center; margin-bottom: 20px;">
+          <h1 style="color: #f0730b; margin: 0;">${COMPANY_INFO.name}</h1>
+          <p style="color: #666; font-style: italic; margin: 5px 0;">${COMPANY_INFO.tagline}</p>
+        </div>
         <h2 style="color: #f0730b;">New Order Received! 🎉</h2>
         <p><strong>Order Number:</strong> ${orderDetails.orderNumber}</p>
         <p><strong>Customer Name:</strong> ${orderDetails.customer.name}</p>
@@ -41,6 +46,14 @@ export async function sendOrderEmail(orderDetails: any) {
         <p style="margin-top: 20px; color: #666;">
           Please login to your admin panel to manage this order.
         </p>
+        
+        <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd; font-size: 12px; color: #888;">
+          <p style="margin: 5px 0;"><strong>${COMPANY_INFO.name}</strong> - ${COMPANY_INFO.tagline}</p>
+          <p style="margin: 5px 0;">Proprietor: ${COMPANY_INFO.proprietor}</p>
+          <p style="margin: 5px 0;">Contact: ${COMPANY_INFO.phones.join(', ')}</p>
+          <p style="margin: 5px 0;">Email: ${COMPANY_INFO.supportEmail}</p>
+          <p style="margin: 5px 0;">GST: ${COMPANY_INFO.gst} | UDYAM: ${COMPANY_INFO.udyam}</p>
+        </div>
       </div>
     `;
 
@@ -67,7 +80,7 @@ export async function sendWhatsAppNotification(orderDetails: any) {
     }
 
     const message = `
-🛒 *New Order Received!*
+🛒 *${COMPANY_INFO.name} - New Order!*
 
 Order: ${orderDetails.orderNumber}
 Customer: ${orderDetails.customer.name}
@@ -78,6 +91,9 @@ Items:
 ${orderDetails.items.map((item: any) => `• ${item.productName} x${item.quantity}`).join('\n')}
 
 Address: ${orderDetails.customer.address}, ${orderDetails.customer.city}, ${orderDetails.customer.state} - ${orderDetails.customer.pincode}
+
+---
+${COMPANY_INFO.name} - ${COMPANY_INFO.tagline}
     `.trim();
 
     const response = await fetch(process.env.WHATSAPP_API_URL, {
