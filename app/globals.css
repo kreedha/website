@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,15 +15,99 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  background-color: #FAF9F6; /* brand.cream-soft */
+  color: #0B2418; /* brand.forest */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 @layer utilities {
+  .glass-nav {
+    @apply backdrop-blur-xl bg-white/60 border-b border-brand-gold-light/20 shadow-[0_2px_20px_-5px_rgba(0,0,0,0.05)];
+  }
+  .glass-card {
+    @apply backdrop-blur-md bg-white/40 border border-white/30 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.04)];
+  }
   .text-balance {
     text-wrap: balance;
   }
+  .text-shadow-premium {
+    text-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+  .premium-gradient {
+    background: linear-gradient(135deg, #0B2418 0%, #1A3C2A 50%, #05120C 100%);
+  }
+  .gold-gradient {
+    background: linear-gradient(135deg, #C5A059 0%, #D4AF37 50%, #846A32 100%);
+  }
+  .shimmer-text {
+    background: linear-gradient(90deg, #D4AF37, #E5D5B0, #D4AF37);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 4s linear infinite;
+  }
+
+  /* Premium Scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 5px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #C5A059;
+    border-radius: 10px;
+    opacity: 0.5;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #0B2418;
+  }
+}
+
+.font-serif {
+  font-family: var(--font-serif), serif;
+}
+
+.font-sans {
+  font-family: var(--font-sans), sans-serif;
+}
+
+/* Base fade-in animation */
+.fade-in {
+  animation: fadeIn 1s cubic-bezier(0.2, 0, 0.2, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  to { background-position: 200% center; }
+}
+
+.premium-border {
+  border: 1px solid rgba(197, 160, 89, 0.15);
+}
+
+.gold-hover-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.gold-hover-effect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(229, 213, 176, 0.2), transparent);
+  transition: 0.5s;
+}
+
+.gold-hover-effect:hover::after {
+  left: 100%;
 }

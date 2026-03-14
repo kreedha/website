@@ -43,7 +43,7 @@ const ProductSchema = new Schema<IProduct>(
       type: [String],
       required: [true, 'At least one image is required'],
       validate: {
-        validator: function(v: string[]) {
+        validator: function (v: string[]) {
           return v && v.length > 0;
         },
         message: 'At least one image is required',

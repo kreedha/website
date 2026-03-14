@@ -24,7 +24,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault();
-    
+
     if (product.stock <= 0) {
       toast.error('Product is out of stock');
       return;
@@ -37,7 +37,7 @@ export default function ProductCard({ product }: ProductCardProps) {
       image: product.images[0],
       weight: product.weight,
     });
-    
+
     toast.success('Added to cart!');
   };
 
@@ -47,39 +47,39 @@ export default function ProductCard({ product }: ProductCardProps) {
 
   return (
     <Link href={`/products/${product._id}`}>
-      <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
-        <div className="relative h-64 overflow-hidden">
+      <div className="bg-white rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.02)] overflow-hidden hover:shadow-[0_40px_80px_rgba(11,36,24,0.08)] transition-all duration-700 group border border-gray-50 flex flex-col h-full">
+        <div className="relative h-80 overflow-hidden">
           <Image
             src={product.images[0]}
             alt={product.name}
             fill
-            className="object-cover group-hover:scale-110 transition-transform duration-300"
+            className="object-cover group-hover:scale-110 transition-transform duration-1000"
           />
           {discount > 0 && (
-            <div className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-md text-sm font-semibold">
+            <div className="absolute top-6 left-6 bg-brand-gold-metallic text-brand-forest px-5 py-2 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase shadow-xl backdrop-blur-sm bg-brand-gold-metallic/90">
               {discount}% OFF
             </div>
           )}
           {product.stock <= 0 && (
-            <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-              <span className="text-white text-xl font-bold">Out of Stock</span>
+            <div className="absolute inset-0 bg-brand-forest/40 backdrop-blur-[2px] flex items-center justify-center">
+              <span className="text-brand-cream text-lg font-serif italic tracking-widest text-shadow-premium">Out of Stock</span>
             </div>
           )}
         </div>
 
-        <div className="p-4">
-          <h3 className="text-lg font-semibold text-gray-800 mb-2 line-clamp-2">
+        <div className="p-10 flex flex-col flex-1">
+          <p className="text-[10px] uppercase tracking-[0.3em] text-brand-gold-dark font-black mb-4">{product.weight}</p>
+          <h3 className="text-2xl font-serif font-bold text-brand-forest mb-6 line-clamp-1 group-hover:shimmer-text transition-all duration-500">
             {product.name}
           </h3>
-          <p className="text-sm text-gray-600 mb-2">{product.weight}</p>
 
-          <div className="flex items-center justify-between mb-3">
-            <div className="flex items-center space-x-2">
-              <span className="text-xl font-bold text-primary-600">
+          <div className="flex items-center justify-between mb-10 mt-auto">
+            <div className="flex items-baseline space-x-4">
+              <span className="text-3xl font-serif font-bold text-brand-forest">
                 ₹{product.price}
               </span>
               {product.originalPrice && (
-                <span className="text-sm text-gray-500 line-through">
+                <span className="text-sm text-brand-sage-muted line-through opacity-50 font-light">
                   ₹{product.originalPrice}
                 </span>
               )}
@@ -89,10 +89,10 @@ export default function ProductCard({ product }: ProductCardProps) {
           <button
             onClick={handleAddToCart}
             disabled={product.stock <= 0}
-            className="w-full bg-primary-600 text-white py-2 rounded-lg hover:bg-primary-700 transition flex items-center justify-center space-x-2 disabled:bg-gray-400 disabled:cursor-not-allowed"
+            className="w-full bg-brand-forest text-brand-cream py-5 rounded-full hover:bg-brand-gold hover:text-brand-forest transition-all duration-500 flex items-center justify-center space-x-4 disabled:bg-gray-100 disabled:text-gray-300 disabled:cursor-not-allowed group/btn shadow-xl gold-hover-effect overflow-hidden relative"
           >
-            <ShoppingCart className="w-5 h-5" />
-            <span>{product.stock <= 0 ? 'Out of Stock' : 'Add to Cart'}</span>
+            <ShoppingCart className="w-6 h-6 group-hover/btn:scale-110 transition-transform duration-500 z-10" />
+            <span className="font-bold tracking-widest uppercase text-sm z-10">{product.stock <= 0 ? 'Unavailable' : 'Add to Collection'}</span>
           </button>
         </div>
       </div>
