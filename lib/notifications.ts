@@ -49,7 +49,8 @@ export async function sendOrderEmail(orderDetails: any) {
         
         <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd; font-size: 12px; color: #888;">
           <p style="margin: 5px 0;"><strong>${COMPANY_INFO.name}</strong> - ${COMPANY_INFO.tagline}</p>
-          <p style="margin: 5px 0;">Proprietor: ${COMPANY_INFO.proprietor}</p>
+          <p style="margin: 5px 0;">Founder: ${COMPANY_INFO.founder}</p>
+          <p style="margin: 5px 0;">Managing Director: ${COMPANY_INFO.managingDirector}</p>
           <p style="margin: 5px 0;">Contact: ${COMPANY_INFO.phones.join(', ')}</p>
           <p style="margin: 5px 0;">Email: ${COMPANY_INFO.supportEmail}</p>
           <p style="margin: 5px 0;">GST: ${COMPANY_INFO.gst} | UDYAM: ${COMPANY_INFO.udyam}</p>

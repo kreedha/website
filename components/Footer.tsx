@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Mail, Phone, MapPin, Instagram, Facebook, Twitter, Youtube } from 'lucide-react';
 
 export default function Footer() {
@@ -43,7 +44,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center space-x-5 group cursor-pointer">
                 <Mail className="w-5 h-5 text-brand-gold-metallic/40 group-hover:text-brand-gold-metallic transition-colors shrink-0" />
-                <span className="text-brand-cream/60 font-light text-sm tracking-wide">Info.kreedha@gmail.com</span>
+                <span className="text-brand-cream/60 font-light text-sm tracking-wide text-lowercase">Info@kreedha.com</span>
               </li>
               <li className="flex items-center space-x-5 group cursor-pointer">
                 <Phone className="w-5 h-5 text-brand-gold-metallic/40 group-hover:text-brand-gold-metallic transition-colors shrink-0" />
@@ -81,8 +82,24 @@ export default function Footer() {
             <Link href="/terms" className="hover:text-brand-gold transition-colors">Terms of Service</Link>
           </div>
         </div>
+        <div className="mt-8 pt-8 border-t border-brand-cream/10 flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8">
+          <div className="flex items-center space-x-4 bg-white/5 px-6 py-3 rounded-2xl border border-white/5 backdrop-blur-sm">
+            <div className="relative w-12 h-8">
+              <Image
+                src="/images/fssai.png"
+                alt="FSSAI Logo"
+                fill
+                className="object-contain opacity-80"
+              />
+            </div>
+            <div className="h-4 w-[1px] bg-white/10"></div>
+            <span className="text-[10px] text-brand-cream/40 font-black uppercase tracking-widest">
+              Registration No: 10425999000345
+            </span>
+          </div>
+        </div>
         <div className="mt-8 text-center text-brand-cream/20 text-[10px] tracking-[0.2em] uppercase">
-          Proprietor: Ramayan Chaudhary | GST: 10AHFPC9774P1ZZ | UDYAM: UDYAM-BR-38-0053959
+          Founder: Ramayan Chaudhary | Managing Director: Er. Ranjeet Chaudhary | GST: 10AHFPC9774P1ZZ | UDYAM: UDYAM-BR-38-0053959
         </div>
       </div>
     </footer>

@@ -4,12 +4,14 @@
 
 **Company Name:** Kreedha  
 **Tagline:** From Farm to Soul  
-**Proprietor:** Ramayan Chaudhary
+**Founder:** Ramayan Chaudhary  
+**Managing Director:** Er. Ranjeet Chaudhary  
 
 ## Registration Numbers
 
 - **GST Registration:** 10AHFPC9774P1ZZ
 - **UDYAM Registration:** UDYAM-BR-38-0053959
+- **FSSAI Registration:** 10425999000345
 - **PAN Card:** AHFPC9774P
 
 ## Contact Information
@@ -19,18 +21,23 @@
 - Secondary: +91 9988557609
 
 ### Email Addresses
+- Primary: Info@kreedha.com
 - Support: info@kreedha.com
 - Alternative: ranjeetchaudhary765@yahoo.com
 
 ### Website
 - www.kreedha.com
 
+## Shipping & Delivery
+
+**Local to Global:** We offer PAN-India delivery and support international trade/exports for our premium fox nuts (Makhana).
+
 ## Where This Information is Used
 
 ### 1. Website Footer (`components/Footer.tsx`)
 - Displays both phone numbers
 - Shows both email addresses
-- Includes proprietor name
+- Includes founder and managing director names
 - Shows GST, UDYAM, and PAN registration numbers
 
 ### 2. Email Notifications (`lib/notifications.ts`)
@@ -69,7 +76,7 @@ WHATSAPP_PHONE_NUMBER=+919681540009
 
 ## Notes
 
-- All company information is centralized in `lib/constants.ts`
+- All company information is centralized in `lib/constants.ts` (now using `founder` instead of `proprietor`)
 - To update company details, modify the constants file and the changes will reflect across the application
 - Registration numbers are displayed in the website footer for transparency and legal compliance
 - Email notifications include full company branding and contact information

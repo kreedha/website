@@ -280,7 +280,7 @@ export default function CheckoutPage() {
                     <span className="text-xl font-serif font-bold">₹{totalPrice}</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="uppercase tracking-[0.2em] text-[10px] font-black opacity-60">Concierge Delivery</span>
+                    <span className="uppercase tracking-[0.2em] text-[10px] font-black opacity-60">Global Shipping</span>
                     <span className="text-brand-gold-metallic font-black tracking-[0.3em] text-[10px] uppercase">Complementary</span>
                   </div>
                   <div className="flex justify-between items-baseline pt-8 border-t border-brand-cream/10">

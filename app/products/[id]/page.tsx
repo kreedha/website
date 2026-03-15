@@ -258,10 +258,10 @@ export default function ProductDetailPage() {
                  <div className="p-5 rounded-full border border-brand-gold-metallic/30 group-hover:bg-brand-gold-metallic/10 transition-colors">
                     <Truck className="w-8 h-8 text-brand-gold-metallic" />
                  </div>
-                 <div>
-                    <p className="text-[10px] tracking-[0.4em] uppercase font-black mb-2 text-brand-gold-light">Concierge</p>
-                    <p className="text-lg font-serif italic tracking-wide">Complimentary Delivery</p>
-                 </div>
+                  <div>
+                    <p className="text-[10px] tracking-[0.4em] uppercase font-black mb-2 text-brand-gold-light">Worldwide</p>
+                    <p className="text-lg font-serif italic tracking-wide">PAN India & Global Shipping</p>
+                  </div>
               </div>
               <div className="flex flex-col items-center text-center space-y-6 group">
                  <div className="p-5 rounded-full border border-brand-gold-metallic/30 group-hover:bg-brand-gold-metallic/10 transition-colors">

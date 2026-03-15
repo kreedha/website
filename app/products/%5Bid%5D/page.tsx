@@ -204,12 +204,28 @@ export default function ProductDetailPage() {
                   <div className="flex items-center space-x-4">
                     <Shield className="w-8 h-8 text-brand-gold" />
                     <div>
-                      <p className="text-xs font-bold uppercase tracking-widest text-brand-gold">Availability</p>
-                      <p className="text-lg font-serif font-bold text-brand-forest">
+                      <p className="text-[10px] font-black uppercase tracking-widest text-brand-gold-dark mb-1">Stock</p>
+                      <p className="text-xl font-serif font-bold text-brand-forest">
                         {product.stock > 0 ? `${product.stock} Units` : 'Sold Out'}
                       </p>
                     </div>
                   </div>
+                </div>
+
+                {/* Global Delivery Badge */}
+                <div className="mb-10 flex items-center space-x-4 p-6 bg-brand-gold-metallic/5 rounded-3xl border border-brand-gold-metallic/10">
+                   <div className="relative w-16 h-16 shrink-0">
+                      <Image 
+                        src="/images/global-delivery.png" 
+                        alt="Global Delivery Available" 
+                        fill 
+                        className="object-contain"
+                      />
+                   </div>
+                   <div>
+                      <p className="text-[10px] font-black uppercase tracking-[0.2em] text-brand-gold-dark mb-1 leading-none">Shipping Globally</p>
+                      <p className="text-xs text-brand-forest/60 italic font-light">PAN-India & Worldwide exports available via premium courier partners.</p>
+                   </div>
                 </div>
 
                 {/* Actions */}

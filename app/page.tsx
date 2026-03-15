@@ -112,7 +112,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="grid md:grid-cols-3 gap-16">
               {[
-                { icon: <Truck className="w-12 h-12" />, title: "Concierge Delivery", desc: "Premium doorstep delivery across the nation, handled with absolute care." },
+                { icon: <Truck className="w-12 h-12" />, title: "PAN India & Global Shipping", desc: "Reliable and premium worldwide delivery, handled with absolute care from our farm to your soul." },
                 { icon: <Shield className="w-12 h-12" />, title: "Quality Guarantee", desc: "Every single seed is inspected to meet our rigorous standards of perfection." },
                 { icon: <Leaf className="w-12 h-12" />, title: "100% Organic", desc: "Sourced from the purest lily ponds, free from any chemical intervention." }
               ].map((feature, idx) => (

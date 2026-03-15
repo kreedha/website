@@ -2,7 +2,9 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ShoppingCart, Heart, Menu, X, User, Search, Instagram, Facebook, Twitter, Youtube } from 'lucide-react';
+import AnnouncementBar from './AnnouncementBar';
 import { useCartStore } from '@/store/cartStore';
 import { useWishlistStore } from '@/store/wishlistStore';
 
@@ -22,16 +24,27 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-700 ${
-      scrolled ? 'py-4' : 'py-8'
-    }`}>
+    <>
+      <AnnouncementBar />
+      <nav className={`fixed w-full z-50 transition-all duration-700 ${
+        scrolled ? 'py-4 top-0' : 'py-8 top-12'
+      }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`glass-nav rounded-full px-8 py-4 flex items-center justify-between transition-all duration-700 ${
            scrolled ? 'shadow-2xl border-brand-gold/10' : 'bg-white/30 border-white/10'
         }`}>
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2 group">
-            <span className="text-3xl font-serif font-bold tracking-tighter text-brand-forest group-hover:shimmer-text transition-all duration-500">
+          <Link href="/" className="flex items-center space-x-3 group">
+            <div className="relative w-12 h-12 transition-transform duration-500 group-hover:scale-110">
+              <Image
+                src="/images/logo.png"
+                alt="Kreedha Logo"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+            <span className="text-2xl font-serif font-bold tracking-tighter text-brand-forest group-hover:shimmer-text transition-all duration-500">
               KREEDHA
             </span>
           </Link>
@@ -119,6 +132,7 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
+    </>
   );
 };
 
